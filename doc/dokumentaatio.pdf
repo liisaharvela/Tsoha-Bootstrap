@@ -1,0 +1,20 @@
+﻿JOHDANTO:
+Järjestelmän on tarkoitus toimia hevosrekisterinä. Pohjana käytetään esimerkkiaiheiden koirarekisteriä. Järjestelmä rekisteröi hevosia. Rekisteröinnin yhteydessä hevosen perustiedot ja sukutiedot syötetään järjestelmään. Järjestelmä sallii myös hevosten kisa- ja jäljeläistietojen päivittämisen tarvittaessa.
+
+Järjestelmä toteutetaan laitoksen users-palvelimella, ja käytetään PHP:tä. Ohjelmisto vaatii yhden tietyn tietokannan käytön, mutta teoriassa ohjelmiston pitäisi olla varsin yksinkertainen muokata toisen samantyyppisen tietokannan käyttöönotettavaksi.
+
+KÄYTTÖTAPAUKSET:
+Hevosen rekisteröiminen:
+Kuka tahansa voi rekisteröidä hevosen syöttämällä sen perustiedot järjestelmään. 
+
+Hevosen lisääminen tietokantaan:
+Rekisteröijä hyväksyy oikein rekisteröidyn hevosen tietokannan osaksi.
+
+Hevosen tietojen muokkaaminen:
+Rekisteröijä voi muokata jälkikäteen tarvittaessa hevosen perustietoja, virheiden sattuessa.
+
+Hevosen tietojen päivittäminen:
+Hevosen omistaja voi päivittää hevosen tietoja (jälkeläisiä, kisatuloksia) ilman erillishyväksyntää.
+
+Hevosen hakeminen tietokannasta:
+Kuka tahansa voi hakea hevosia tietokannasta.

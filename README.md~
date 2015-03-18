@@ -2,7 +2,7 @@
 
 Yleisiä linkkejä:
 
-* [Linkki sovellukseeni](lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/)
+* [Linkki sovellukseeni](https://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/)
 * [Linkki dokumentaatiooni](https://www.github.com/liisaharvela/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe

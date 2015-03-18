@@ -9,9 +9,10 @@ Yleisiä linkkejä:
 
 Toteutan hevosrekisterin käyttäen pohjana esimerkkityöaihe [Kennelkerhoa](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Kennelkerho.html).
 
-## Muita linkkejä
+## Testisivuni
 
-[Typography](http://getbootstrap.com/css/#type)
-[Tables](http://getbootstrap.com/css/#tables)
-[Forms](http://getbootstrap.com/css/#forms)
-[Buttons](http://getbootstrap.com/css/#buttons)
+[Etusivu](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/)
+[Listaus](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses)
+[Muokkaus](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses/1/edit)
+[Tiedot](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses/1)
+

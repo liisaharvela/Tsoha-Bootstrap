@@ -22,14 +22,6 @@ CREATE TABLE Hevonen(
 	ika INTEGER --ika
 );
 
-CREATE TABLE Palkinnot(
-	id SERIAL PRIMARY KEY, --pääavain
-	hevonen_id INTEGER references Hevonen(id), --viittaa Hevonen-taluun
-	nimi varchar(120) NOT NULL, --nimi, max 120 merkkiä
-	lyhenne varchar(10) NOT NULL, --lyenne, max 10 merkkiä
-	pvm DATE --koska myönnetty
-);
-
 CREATE TABLE Kisa
 	id SERIAL PRIARY KEY, --pääavain
 	hevonen_id INTEGER references Hevonen(id), --viittaa Heonn-tauluun

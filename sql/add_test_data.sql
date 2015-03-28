@@ -1,18 +1,16 @@
 -- Omistaja-taulun testidata
-INSERT INTO Omistaja VALUES 
-('Minä!');
-INSERT INTO Omistaja VALUES 
-('MINÄ!!');
+INSERT INTO omistaja(name) VALUES 
+('MINÄ');
 
 -- Talli-taulun testidata
-INSERT INTO Talli (name) VALUES 
-('NIMIII!!!');
+INSERT INTO talli (name) VALUES 
+('NIMIII');
 
 -- Hevonen-taulun testidata
-INSERT INTO Hevonen (name, sukupuoli, rotu, isa, ema, varitys, syntymaika, ika) VALUES 
-('NIMSKU', 'ori', 'juustoponi', 'Jeesus', 'Maria', 'ruskea', 11-02-1994, 8);
+INSERT INTO hevonen (name, sukupuoli, rotu, isa, ema, varitys, syntymaaika, ika) VALUES 
+('NIMSKU', 'ori', 'juustoponi', 'Jeesus', 'Maria', 'ruskea', '19941102', 8);
 
 -- Kisa-taulun testidata
-INSERT INTO Kisa (pvm, kisapaikka, laj, sijotus) VALUES 
-(11-02-1994, 'Beetlehem', 'benjihyppy', 1);
+INSERT INTO kisa (pvm, kisapaikka, laji, sijoitus) VALUES 
+('19941102', 'Beetlehem', 'benjihyppy', 1);
 

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Lisää uusi hevonen</h1>
+
+  <form method="post" action="{{base_path}}/horse">
+    <div class="form-group">
+      <label>Nimi</label>
+      <input name="name" class="form-control" type="text">
+    </div>
+
+    <div class="form-group">
+      <label>Sukupuoli</label>
+      <input name="sukupuoli" class="form-control" type="text">
+    </div>
+
+    <div class="form-group">
+      <label>Rotu</label>
+      <input name="rotu" class="form-control" type="text">
+    </div>
+
+    <div class="form-group">
+      <label>Isä</label>
+      <input name="isa" class="form-control" type="text">
+    </div>
+
+   <div class="form-group">
+      <label>Emä</label>
+      <input name="ema" class="form-control" type="text">
+    </div>
+
+    <div class="form-group">
+      <label>Väritys</label>
+      <input name="varitys" class="form-control" type="text">
+    </div>
+
+    <div class="form-group">
+      <label>Syntymäaika</label>
+      <input name="syntymaaika" class="form-control" type="text">
+    </div>
+
+    <div class="form-group">
+      <label>Ikä</label>
+      <input name="ika" class="form-control" type="text">
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Lisää</button>
+    </div>
+  </form>
+{% endblock %}

@@ -8,6 +8,27 @@
     HelloWorldController::sandbox();
   });
 
+    // Hevosen lisääminen
+    $routes->post('/horse', function() {
+    HorseController::store();
+  });
+
+    // Hevoslisäys
+    $routes->get('/horse/new', function() {
+    HorseController::create();
+  });
+
+
+  // Hevoslistaus
+    $routes->get('/horse', function() {
+    HorseController::index();
+  });
+
+    // Hevosesittely
+    $routes->get('/horse/:id', function($id) {
+    HorseController::show($id);
+  });
+
   $routes->get('/horses', function() {
     HelloWorldController::horses_list();
   });

@@ -1,14 +1,14 @@
-CREATE TABLE Omistaja(
+CREATE TABLE omistaja(
 	id SERIAL PRIMARY KEY, --pääavain
 	name varchar(120) NOT NULL --nimi, max 120 merkkiä
 );
 
-CREATE TABLE Talli(	
+CREATE TABLE talli(	
 	id SERIAL PRIMARY KEY, --pääavain
 	name varchar(120) NOT NULL --nimi, max 120 merkkiä
 );
 
-CREATE TABLE Hevonen(
+CREATE TABLE hevonen(
 	id SERIAL PRIMARY KEY, --pääavain
 	omistaja_id INTEGER references Omistaja(id), --viittaa Omistaja-tauluun
 	talli_id INTEGER references Talli(id), --viittaa Talli-tauluun
@@ -22,8 +22,8 @@ CREATE TABLE Hevonen(
 	ika INTEGER --ika
 );
 
-CREATE TABLE Kisa
-	id SERIAL PRIARY KEY, --pääavain
+CREATE TABLE kisa(
+	id SERIAL PRIMARY KEY, --pääavain
 	hevonen_id INTEGER references Hevonen(id), --viittaa Heonn-tauluun
 	pvm DATE,
 	kisapaikka varchar(120) NOT NULL, --kisapaikan nimi, max 120 merkkiä

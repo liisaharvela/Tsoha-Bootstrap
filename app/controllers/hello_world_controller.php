@@ -1,5 +1,6 @@
 <?php
 
+  require 'app/models/horse.php';
   class HelloWorldController extends BaseController{
 
     public static function index(){
@@ -9,7 +10,46 @@
 
     public static function sandbox(){
       // Testaa koodiasi täällä
-      View::make('helloworld.html');
+      $params = $_POST;
+      $horse = new Horse(array(
+        'name' => $params['name'],
+        'sukupuoli' => $params['sukupuoli'],
+        'rotu' => $params['rotu'],
+        'isa' => $params['isa'],
+        'ema' => $params['ema'],
+        'varitys' => $params['varitys'],
+        'syntymaaika' => $params['syntymaaika'],
+        'ika' => $params['ika']
+        ));
+
+      Kint::dump($params);
+      $game->save();
+    }
+
+    public static function store(){
+      $params = $_POST;
+      $horse = new Horse(array(
+        'name' => $params['name'],
+        'sukupuoli' => $params['sukupuoli'],
+        'rotu' => $params['rotu'],
+        'isa' => $params['isa'],
+        'ema' => $params['ema'],
+        'varitys' => $params['varitys'],
+        'syntymaaika' => $params['syntymaaika'],
+        'ika' => $params['ika']
+        ));
+
+      Kint::dump($params);
+      $game->save();
+    }
+
+    public function save(){
+    $query = DB::connection()->prepare('INSERT INTO Horse (name, sukupuoli, rotu, isa, ema, varitys, syntymaaika, ika) VALUES (:name, :sukupuoli, :rotu, :isa, :ema, ;varitys, :syntymaaika, :ika) RETURNING id');
+    $query->execute(array('name' => $this->name, 'sukupuoli' => $this->sukupuoli, 'rotu' => $this->rotu, 'isa' => $this->isa, 'ema' => $this->ema, 'varitys' => $this->varitys, 'syntymaaika' => $this->syntymaaika, 'ika' => $this->ika));
+    $row = $query->fetch();
+    
+    Kint::trace();
+    Kint::dump($row);
     }
 
     public static function horses_list(){
@@ -26,4 +66,6 @@
       // Hevosen muokkaus
       View::make('suunnitelmat/horses_edit.html');
     }
+
+
   }

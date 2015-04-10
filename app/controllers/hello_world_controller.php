@@ -54,17 +54,22 @@
 
     public static function horses_list(){
       // Hevoslistaus
-      View::make('suunnitelmat/horses_list.html');
+      View::make('horse/index.html');
     }
 
     public static function horse_show(){
       // Hevosen tiedot
-      View::make('suunnitelmat/horse_show.html');
+      View::make('horse/show.html');
+    }
+
+    public static function horse_new(){
+      // Uusi hevonen
+      View::make('horse/new.html');
     }
 
     public static function horse_edit(){
       // Hevosen muokkaus
-      View::make('suunnitelmat/horses_edit.html');
+      View::make('horse/edit.html');
     }
 
 

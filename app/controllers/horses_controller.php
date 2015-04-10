@@ -40,7 +40,7 @@
         $horse->save();
         Redirect::to('/horse/' . $horse->id, array('message') => 'Hevonen on lisätty järjestelmään!'));
       } else{
-        View::make('game/new.html', array('errors' = > ¤errors, 'attributes' => ¤attributes));
+        View::make('horse/new.html', array('errors' = > $errors, 'attributes' => $attributes));
       }    
     }
 

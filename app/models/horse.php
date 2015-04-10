@@ -8,6 +8,7 @@ class horse extends BaseModel {
 	// Constructor
 	public function __construct($attributes){
 		parent::__construct($attributes);
+		$this->validators = array('validate_name', 'validate_sukupuoli', 'validate_rotu', 'validate_isa', 'validate_ema', 'validate_varitys', 'validate_syntymaaika', 'validate_ika');
 	}
 
 	// Print all function
@@ -66,5 +67,73 @@ class horse extends BaseModel {
 		$row = $query->fetch();
 		$this->id = $row['id'];
 	}
+
+	public function validate_name(){
+		$errors = array();
+  		if($this->name == '' || $this->name == null){
+    		$errors[] = 'Nimi ei saa olla tyhjä!';
+  		}
+  		if(strlen($this->name) < 3){
+    		$errors[] = 'Nimen pituuden tulee olla vähintään kolme merkkiä!';
+  		}
+  		return $errors;
+	}
+
+	public function validate_sukupuoli(){
+		$errors = array();
+  		if($this->sukupuoli == '' || $this->sukupuoli == null){
+    		$errors[] = 'Sukupuoli ei saa olla tyhjä!';
+  		}
+  		return $errors;
+	}
+
+	public function validate_rotu(){
+		$errors = array();
+  		if($this->rotu == '' || $this->rotu == null){
+    		$errors[] = 'Hevosella tulee olla rotu!';
+  		}
+  		return $errors;
+	}
+
+	public function validate_isa(){
+		$errors = array();
+  		if($this->isa == '' || $this->isa == null){
+    		$errors[] = 'Hevosella tulee olla isä!';
+  		}
+  		return $errors;
+	}
+
+	public function validate_ema(){
+		$errors = array();
+  		if($this->ema == '' || $this->ema == null){
+    		$errors[] = 'Hevosella tulee olla emä!';
+  		}
+  		return $errors;
+	}
+
+	public function validate_varitys(){
+		$errors = array();
+  		if($this->varitys == '' || $this->varitys == null){
+    		$errors[] = 'Hevosella tulee olla väri!';
+  		}
+  		return $errors;
+	}
+
+	public function validate_syntymaaika(){
+		$errors = array();
+  		if($this->syntymaaika == '' || $this->syntymaaika == null){
+    		$errors[] = 'Hevosella tulee olla syntymäaika!';
+  		}
+  		return $errors;
+	}
+
+	public function validate_ika(){
+		$errors = array();
+  		if($this->ika == '' || $this->ika == null){
+    		$errors[] = 'Hevosella tulee olla ika!';
+  		}
+  		return $errors;
+	}
+
 
 }

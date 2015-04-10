@@ -19,9 +19,31 @@
       // Lisätään $errors muuttujaan kaikki virheilmoitukset taulukkona
       $errors = array();
 
-      foreach($this->validators as $validator){
-        // Kutsu validointimetodia tässä ja lisää sen palauttamat virheet errors-taulukkoon
-      }
+      $validate_name = 'validate_name';
+      $this->{$validate_name}();
+
+      $validate_sukupuoli = 'validate_sukupuoli';
+      $this->{$validate_sukupuoli}();
+
+      $validate_rotu = 'validate_rotu';
+      $this->{$validate_rotu}();
+
+      $validate_isa = 'validate_isa';
+      $this->{$validate_isa}();
+
+      $validate_ema = 'validate_ema';
+      $this->{$validate_ema}();
+
+      $validate_varitys = 'validate_varitys';
+      $this->{$validate_varitys}();
+
+      $validate_syntymaaika = 'validate_syntymaaika';
+      $this->{$validate_syntymaaika}();
+
+      $validate_ika = 'validate_ika';
+      $this->{$validate_ika}();
+
+      $errors = array_merge($errors, $validate_name, $validate_sukupuoli, $validate_rotu, $validate_isa, $validate_ema, $validate_varitys, $validate_syntymaaika, $validate_ika);
 
       return $errors;
     }

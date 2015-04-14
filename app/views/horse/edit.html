@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Muokkaa hevosta {{horse.name}}</h1>
+
+  <form>
+    
+    <div class="form-group">
+      <label>Nimi</label>
+      <input class="form-control" value="heponnimi" type="text">
+    </div>
+    <div class="form-group">
+      <label>Rotu, sukupuoli</label>
+      <input class="form-control" value="suomalainen puoliverinen, ori" type="text">
+    </div>
+    <div class="form-group">
+      <label>Syntymäaika, ikä</label>
+      <input class="form-control" value="11.11.2011, 8v" type="text">
+    </div>
+    <div class="form-group">
+      <label>Väritys</label>
+      <input class="form-control" value="musta, vtj sukka" type="text">
+    </div>
+    <div class="form-group">
+      <label>Kasvattaja</label>
+      <input class="form-control" value="Bacon Miller, GBR" type="text">
+    </div>
+    <div class="form-group">
+      <label>Painotus, koulutustaso</label>
+      <input class="form-control" value="koulu, GP-120cm-110cm" type="text">
+    </div>
+    <div class="form-group">
+      <label>Arvonimet</label>
+      <input class="form-control" value="KTK-I" type="text">
+    </div>
+    <div class="form-group">
+      <label>Luonnekuvaus</label>
+      <textarea class="form-control">
+      </textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Tallenna</button>
+    </div>
+  </form>
+{% endblock %}

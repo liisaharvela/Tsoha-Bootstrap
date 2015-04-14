@@ -16,3 +16,10 @@ Toteutan hevosrekisterin käyttäen pohjana esimerkkityöaihe [Kennelkerhoa](htt
 [Muokkaus](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses/1/edit)
 [Tiedot](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses/1)
 
+## Käynnistys- ja käyttöohje
+
+[Kirjautumissivu](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/login)
+
+Käyttäjätunnus: virta
+Salasana: hepo
+

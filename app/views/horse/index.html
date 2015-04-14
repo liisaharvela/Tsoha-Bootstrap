@@ -19,7 +19,7 @@
     </thead>
 
     <tbody>
-      {‰ for horse in horses ‰}
+      {% for horse in horses %}
       <!-- Listataan hevoset tähän -->
       <tr>
         <td>{{rotu}}</><td>
@@ -29,7 +29,7 @@
         <td>{{ema}}</td>
         <th><a class="btn btn-default btn-sm" href="{{base_path}}/horse/{{horse.id}}/edit">Muokkaa</a></th>
       </tr>
-      {‰ endfor ‰}
+      {% endfor %}
     </tbody>
   </table>
 {% endblock %}

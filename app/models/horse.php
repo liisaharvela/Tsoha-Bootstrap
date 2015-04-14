@@ -58,7 +58,7 @@ class horse extends BaseModel {
 			return $horse;
 		}
 
-		return $null;
+		return null;
 	}
 
 	public function save(){

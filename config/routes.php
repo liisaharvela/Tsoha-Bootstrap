@@ -30,13 +30,33 @@
   });
 
   $routes->get('/horses', function() {
-    HelloWorldController::horses_list();
+    HorseController::horses_list();
   });
 
   $routes->get('/horses/1', function() {
-    HelloWorldController::horse_show();
+    HorseController::horse_show();
   });
 
   $routes->get('/horses/1/edit', function() {
-    HelloWorldController::horse_edit();
+    HorseController::horse_edit();
+  });
+
+  $routes->get('/horse/:id/edit', function($id){
+    HorseController::edit($id);
+  });
+
+  $routes->post('/horse/:id/edit', function($id){
+    HorseController::update($id);
+  });
+
+  $routes->post('/horse/:id/destroy', function($id){
+    HorseController::destroy($id);
+  });
+
+  $routes->get('/login', function(){
+    UserController::login();
+  });
+
+  $routes->post('/login', function(){
+    UserController::handle_login();
   });

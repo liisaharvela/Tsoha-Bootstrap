@@ -11,17 +11,17 @@ Toteutan hevosrekisterin käyttäen pohjana esimerkkityöaihe [Kennelkerhoa](htt
 
 ## Testisivuni
 
-[Etusivu](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/)
-[Listaus](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses)
-[Muokkaus](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses/1/edit)
-[Tiedot](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses/1)
+* [Etusivu](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/)
+* [Listaus](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses)
+* [Muokkaus](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses/1/edit)
+* [Tiedot](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses/1)
 
 ## Käynnistys- ja käyttöohje
 
 [Kirjautumissivu](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/login)
 
-Käyttäjätunnus: virta
-Salasana: hepo
+* Käyttäjätunnus: virta
+* Salasana: hepo
 
 ## Lisenssi
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons 

@@ -31,6 +31,12 @@ CREATE TABLE kisa(
 	sijoitus INTEGER
 );
 
+CREATE TABLE kayttaja(
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(120) NOT NULL,
+	password VARCHAR(120) NOT NULL
+);
+
 
 
 

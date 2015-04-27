@@ -14,3 +14,6 @@ INSERT INTO hevonen (name, sukupuoli, rotu, isa, ema, varitys, syntymaaika, ika)
 INSERT INTO kisa (pvm, kisapaikka, laji, sijoitus) VALUES 
 ('19941102', 'Beetlehem', 'benjihyppy', 1);
 
+-- Kayttaja-taulun testidata
+INSERT INTO kayttaja (name, password) VALUES
+('virta', 'hepo');

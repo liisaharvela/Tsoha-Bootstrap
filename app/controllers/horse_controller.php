@@ -6,6 +6,7 @@
   	
   	// Get all horses
   	public static function index(){
+      // self::check_logged_in();
   		$horses = Horse::all();
 
   		View::make('horse/index.html', array('horses' => $horses));
@@ -47,7 +48,7 @@
     // Hevosen muokkaaminen
     public static function edit($id){
       $horse = Horse::find($id);
-      View::make('horse/edit.html', array('attributes' => $game));
+      View::make('horse/edit.html', array('attributes' => $horse));
     }
 
     // Hevosen päivittäminen
@@ -84,4 +85,26 @@
 
     Redirect::to('/horse', array('message' => 'Hevonen on poistettu onnistuneesti!'));
    }
+
+   public function save(){
+    $query = DB::connection()->prepare('INSERT INTO Horse (name, sukupuoli, rotu, isa, ema, varitys, syntymaaika, ika) VALUES (:name, :sukupuoli, :rotu, :isa, :ema, ;varitys, :syntymaaika, :ika) RETURNING id');
+    $query->execute(array('name' => $this->name, 'sukupuoli' => $this->sukupuoli, 'rotu' => $this->rotu, 'isa' => $this->isa, 'ema' => $this->ema, 'varitys' => $this->varitys, 'syntymaaika' => $this->syntymaaika, 'ika' => $this->ika));
+    $row = $query->fetch();
+    
+    Kint::trace();
+    Kint::dump($row);
+    }
+
+    // Hevoslistaus
+    public static function listing(){
+      // self::check_logged_in();
+      View::make('horse/listing.html');
+    }
+
+        public static function create(){
+      // Uusi hevonen
+      View::make('horse/new.html');
+    }
+
+
   }

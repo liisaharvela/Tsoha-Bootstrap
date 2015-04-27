@@ -1,7 +1,7 @@
 <?php
 
   $routes->get('/', function() {
-    HelloWorldController::index();
+    HorseController::index();
   });
 
   $routes->get('/hiekkalaatikko', function() {
@@ -30,15 +30,11 @@
   });
 
   $routes->get('/horses', function() {
-    HorseController::horses_list();
+    HorseController::listing();
   });
 
-  $routes->get('/horses/1', function() {
-    HorseController::horse_show();
-  });
-
-  $routes->get('/horses/1/edit', function() {
-    HorseController::horse_edit();
+  $routes->get('/horses/:id', function() {
+    HorseController::show($id);
   });
 
   $routes->get('/horse/:id/edit', function($id){
@@ -59,4 +55,8 @@
 
   $routes->post('/login', function(){
     UserController::handle_login();
+  });
+
+  $routes->post('/logout', function(){
+    UserController::logout();
   });

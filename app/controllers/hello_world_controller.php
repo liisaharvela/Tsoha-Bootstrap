@@ -40,7 +40,7 @@
         ));
 
       Kint::dump($params);
-      $game->save();
+      $horse->save();
     }
 
     public function save(){

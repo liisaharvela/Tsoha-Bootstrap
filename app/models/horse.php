@@ -35,6 +35,7 @@ class horse extends BaseModel {
 		}	
 	}
 
+	// Etsi
 	public static function find($id){
 		$query = DB::connection()->prepare('SELECT * FROM Hevonen WHERE id = :id LIMIT 1');
 		$query->execute(array('id' => $id));
@@ -61,6 +62,7 @@ class horse extends BaseModel {
 		return null;
 	}
 
+	// Tallennus
 	public function save(){
 		$query = DB::connection()->prepare('INSERT INTO hevonen (name, sukupuoli, rotu, isa, ema, varitys, syntymaaika, ika) VALUES (:name, :sukupuoli, :rotu, :isa, :ema, :varitys, :syntymaaika, :ika) RETURNING id');
 		$query->execute(array('name' => $this->name, 'sukupuoli' => $this->sukupuoli, 'rotu' => $this->rotu, 'isa' => $this->isa, 'ema' => $this->ema, 'varitys' => $this->varitys, 'syntymaaika' => $this->syntymaaika, 'ika' => $this->ika));
@@ -68,6 +70,7 @@ class horse extends BaseModel {
 		$this->id = $row['id'];
 	}
 
+	// Validoi nimi
 	public function validate_name(){
 		$errors = array();
   		if($this->name == '' || $this->name == null){
@@ -79,6 +82,7 @@ class horse extends BaseModel {
   		return $errors;
 	}
 
+	// Validointi
 	public function validate_sukupuoli(){
 		$errors = array();
   		if($this->sukupuoli == '' || $this->sukupuoli == null){
@@ -87,6 +91,7 @@ class horse extends BaseModel {
   		return $errors;
 	}
 
+	// Validointi
 	public function validate_rotu(){
 		$errors = array();
   		if($this->rotu == '' || $this->rotu == null){
@@ -95,6 +100,7 @@ class horse extends BaseModel {
   		return $errors;
 	}
 
+	// Validointi
 	public function validate_isa(){
 		$errors = array();
   		if($this->isa == '' || $this->isa == null){
@@ -103,6 +109,7 @@ class horse extends BaseModel {
   		return $errors;
 	}
 
+	// Validointi
 	public function validate_ema(){
 		$errors = array();
   		if($this->ema == '' || $this->ema == null){
@@ -111,6 +118,7 @@ class horse extends BaseModel {
   		return $errors;
 	}
 
+	// Validointi
 	public function validate_varitys(){
 		$errors = array();
   		if($this->varitys == '' || $this->varitys == null){
@@ -119,6 +127,7 @@ class horse extends BaseModel {
   		return $errors;
 	}
 
+	// Validointi
 	public function validate_syntymaaika(){
 		$errors = array();
   		if($this->syntymaaika == '' || $this->syntymaaika == null){
@@ -127,10 +136,11 @@ class horse extends BaseModel {
   		return $errors;
 	}
 
+	// Validointi
 	public function validate_ika(){
 		$errors = array();
   		if($this->ika == '' || $this->ika == null){
-    		$errors[] = 'Hevosella tulee olla ika!';
+    		$errors[] = 'Hevosella tulee olla ikä!';
   		}
   		return $errors;
 	}

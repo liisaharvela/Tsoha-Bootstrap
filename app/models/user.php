@@ -11,6 +11,7 @@ class User extends BaseModel {
 		$this->validators = array('validate_name', 'validate_password');
 	}
 
+	// Validointi
 	public function validate_name(){
 		$errors = array();
   		if($this->name == '' || $this->name == null){
@@ -19,6 +20,7 @@ class User extends BaseModel {
   		return $errors;
 	}
 
+	// Validointi
 	public function validate_password(){
 		$errors = array();
   		if($this->password == '' || $this->password == null){
@@ -27,6 +29,7 @@ class User extends BaseModel {
   		return $errors;
 	}
 
+	// Auth
 	public function authenticate($name, $password) {
 		$query = DB::connection()->prepare('SELECT * FROM kayttaja WHERE name = :name AND password = :password LIMIT 1');
 		$query->execute(array('name' => $name, 'password' => $password));
@@ -39,6 +42,7 @@ class User extends BaseModel {
 		}
 	}
 
+	// Etsi
 	public static function find($id) {
 		$query = DB::connection()->prepare('SELECT distinct * FROM kayttaja where id = :id LIMIT 1');
 		$query->execute(array('id' => $id));

@@ -4,22 +4,19 @@
 
   class HorseController extends BaseController{
   	
-  	// Get all horses
+  	// Etusivu
   	public static function index(){
-      // self::check_logged_in();
-  		$horses = Horse::all();
-
-  		View::make('horse/index.html', array('horses' => $horses));
+  		View::make('horse/index.html');
   	}
 
-  	// Get one horse
+  	// Hae tietty hevonen
   	public static function show($id){
-  		$horse = Horse::find($id);
+      $horse = Horse::find($id);
 
   		View::make('horse/show.html', array('horse' => $horse));
   	}
 
-    // Add horse
+    // Tallenna hevonen
     public static function store(){
       $params = $_POST;
 
@@ -47,6 +44,7 @@
 
     // Hevosen muokkaaminen
     public static function edit($id){
+      self::check_logged_in();
       $horse = Horse::find($id);
       View::make('horse/edit.html', array('attributes' => $horse));
     }
@@ -86,6 +84,7 @@
     Redirect::to('/horse', array('message' => 'Hevonen on poistettu onnistuneesti!'));
    }
 
+   // Tallenna hevonen
    public function save(){
     $query = DB::connection()->prepare('INSERT INTO Horse (name, sukupuoli, rotu, isa, ema, varitys, syntymaaika, ika) VALUES (:name, :sukupuoli, :rotu, :isa, :ema, ;varitys, :syntymaaika, :ika) RETURNING id');
     $query->execute(array('name' => $this->name, 'sukupuoli' => $this->sukupuoli, 'rotu' => $this->rotu, 'isa' => $this->isa, 'ema' => $this->ema, 'varitys' => $this->varitys, 'syntymaaika' => $this->syntymaaika, 'ika' => $this->ika));
@@ -97,12 +96,14 @@
 
     // Hevoslistaus
     public static function listing(){
-      // self::check_logged_in();
-      View::make('horse/listing.html');
+      self::check_logged_in();
+      $horses = Horse::all();
+      View::make('horse/listing.html', array('horses' => $horses));
     }
 
-        public static function create(){
-      // Uusi hevonen
+    // Luo uusi hevonen
+    public static function create(){
+      self::check_logged_in();
       View::make('horse/new.html');
     }
 

@@ -4,10 +4,12 @@
 
 class UserController extends BaseController{
   
+  // Sisäänkirjautuminen
   public static function login(){
       View::make('user/login.html');
   }
 
+  // Kirjautumisen käsittely
   public static function handle_login(){
     $params = $_POST;
     $user = User::authenticate($params['username'], $params['password']);
@@ -21,6 +23,7 @@ class UserController extends BaseController{
     }
   }
 
+  // Uloskirjautuminen
   public static function logout(){
     $_SESSION['user'] = null;
     Redirect::to('/login', array('message' => 'Olet kirjautunut ulos!'));

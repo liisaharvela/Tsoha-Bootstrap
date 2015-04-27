@@ -13,7 +13,7 @@ class horse extends BaseModel {
 
 	// Print all function
 	public function all(){
-		$query = DB::connection()->prepare('SELECT * FROM hevoset');
+		$query = DB::connection()->prepare('SELECT * FROM hevonen');
 		$query->execute();
 		$rows = $query->fetchAll();
 		$horses=array();

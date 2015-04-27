@@ -5,17 +5,31 @@
   <!-- Painikkeet tähän -->
   <p>
     {{forms.destroy_button("#{base_path}/horse/#{horse.id}/destroy")}}
-    {{forms.edit_button()}}
+    <a class="btn btn-default btn-sm" href="{{base_path}}/horse/{{horse.id}}/edit">Muokkaa</a>
   </p>
+
+  <br />
+    <h3>Perustiedot</h3>
   <!-- Tiedot tulee listana tähän -->
   <ul>
     <li><strong>Rotu, sukupuoli:</strong> {{horse.rotu}}, {{horse.sukupuoli}}</li>
-    <li><strong>Syntymäaika, ikä:</strong> {{horse.syntymaaika}}, {{horse.ika}}</li>
+    <li><strong>Syntymäaika, ikä:</strong> {{horse.syntymaaika}}, {{horse.ika}}-vuotias</li>
     <li><strong>Väritys:</strong> {{horse.varitys}}</li>
     <li><strong>Isä:</strong> {{horse.isa}}</li>
     <li><strong>Emä:</strong>
     {{horse.ema}}</li>
-    <li><strong>Omistaja, talli:</strong> {{horse.omistaja_id}}, {{horse.talli_id}}</li>
   </ul>
+
+  <h3>Luonne</h3>
+  Luonteeltaan {{horse.name}} on...<br />
+  <ul>
+  <li>voimakastahtoinen</li>
+  <li>kapasiteetikas</li>
+  <li>herkkä</li>
+  </ul>
+
+  <br />
+
+  <h4>{{horse.name}} on tarjolla jalostukseen.</h4>
 
 {% endblock %}

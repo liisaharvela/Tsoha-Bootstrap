@@ -8,7 +8,7 @@ INSERT INTO talli (name) VALUES
 
 -- Hevonen-taulun testidata
 INSERT INTO hevonen (name, sukupuoli, rotu, isa, ema, varitys, syntymaaika, ika) VALUES 
-('NIMSKU', 'ori', 'juustoponi', 'Jeesus', 'Maria', 'ruskea', '19941102', 8);
+('Jeesus', 'ori', 'pyhän kolminaisuudenponi', 'Joosef', 'Maria', 'taivaallinen', '00011224', 20);
 
 -- Kisa-taulun testidata
 INSERT INTO kisa (pvm, kisapaikka, laji, sijoitus) VALUES 

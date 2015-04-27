@@ -2,40 +2,24 @@
 {% block content %}
   <h1>Muokkaa hevosta {{horse.name}}</h1>
 
-  <form>
-    
+
+  <form method="post" action="{{base_path}}/edit">
+
     <div class="form-group">
       <label>Nimi</label>
-      <input class="form-control" value="heponnimi" type="text">
+      <input class="form-control" value="{{horse.nimi}}" type="text">
     </div>
     <div class="form-group">
       <label>Rotu, sukupuoli</label>
-      <input class="form-control" value="suomalainen puoliverinen, ori" type="text">
+      <input class="form-control" value="{{horse.rotu}}, {{horse.sukupuoli}}" type="text">
     </div>
     <div class="form-group">
       <label>Syntymäaika, ikä</label>
-      <input class="form-control" value="11.11.2011, 8v" type="text">
+      <input class="form-control" value="{{horse.syntymaaika}}, {{horse.ika}}-vuotias" type="text">
     </div>
     <div class="form-group">
       <label>Väritys</label>
-      <input class="form-control" value="musta, vtj sukka" type="text">
-    </div>
-    <div class="form-group">
-      <label>Kasvattaja</label>
-      <input class="form-control" value="Bacon Miller, GBR" type="text">
-    </div>
-    <div class="form-group">
-      <label>Painotus, koulutustaso</label>
-      <input class="form-control" value="koulu, GP-120cm-110cm" type="text">
-    </div>
-    <div class="form-group">
-      <label>Arvonimet</label>
-      <input class="form-control" value="KTK-I" type="text">
-    </div>
-    <div class="form-group">
-      <label>Luonnekuvaus</label>
-      <textarea class="form-control">
-      </textarea>
+      <input class="form-control" value="{{horse.varitys}}" type="text">
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-primary">Tallenna</button>

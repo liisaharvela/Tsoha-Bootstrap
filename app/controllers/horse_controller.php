@@ -49,7 +49,7 @@
       View::make('horse/edit.html', array('attributes' => $horse));
     }
 
-    // Hevosen päivittäminen
+    // Hevosen tietojen päivittäminen
     public static function update($id){
       $params = $_POST;
 

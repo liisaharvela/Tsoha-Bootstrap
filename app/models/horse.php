@@ -62,7 +62,7 @@ class horse extends BaseModel {
 	}
 
 	public function save(){
-		$query = DB::connection()->prepare('INSERT INTO hevonen (name, sukupuoli, rotu, isa, ema, varitys, syntymaaika, ika) VALUES (:name, :sukupuoli, :rotu, :isa, :ema, ;varitys, :syntymaaika, :ika) RETURNING id');
+		$query = DB::connection()->prepare('INSERT INTO hevonen (name, sukupuoli, rotu, isa, ema, varitys, syntymaaika, ika) VALUES (:name, :sukupuoli, :rotu, :isa, :ema, :varitys, :syntymaaika, :ika) RETURNING id');
 		$query->execute(array('name' => $this->name, 'sukupuoli' => $this->sukupuoli, 'rotu' => $this->rotu, 'isa' => $this->isa, 'ema' => $this->ema, 'varitys' => $this->varitys, 'syntymaaika' => $this->syntymaaika, 'ika' => $this->ika));
 		$row = $query->fetch();
 		$this->id = $row['id'];

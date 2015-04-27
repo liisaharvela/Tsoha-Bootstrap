@@ -1,9 +1,9 @@
 <?php
 
-class user extends BaseModel {
+class User extends BaseModel {
 
 // Attributes
-	public $name, $password;
+	public $id, $name, $password;
 
 	// Constructor
 	public function __construct($attributes){
@@ -28,8 +28,8 @@ class user extends BaseModel {
 	}
 
 	public function authenticate($name, $password) {
-		$query = DB::connection()->prepare('SELECT * FROM kayttaja WHERE name = :name AND password = :password LIMIT 1', array('name' => $name, 'password' => $password));
-		$query->execute();
+		$query = DB::connection()->prepare('SELECT * FROM kayttaja WHERE name = :name AND password = :password LIMIT 1');
+		$query->execute(array('name' => $name, 'password' => $password));
 		$row = $query->fetch();
 		if($row){
 			$user = new User($row);
@@ -37,6 +37,19 @@ class user extends BaseModel {
 		}else{
 			return null;
 		}
+	}
+
+	public static function find($id) {
+		$query = DB::connection()->prepare('SELECT distinct * FROM kayttaja where id = :id LIMIT 1');
+		$query->execute(array('id' => $id));
+		$row = $query->fetch();
+
+		if ($row) {
+			$user = new User($row);
+			return $user;
+		}
+
+		return null;
 	}
 
 }

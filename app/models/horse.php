@@ -12,7 +12,7 @@ class horse extends BaseModel {
 	}
 
 	// Print all function
-	public static function all(){
+	public function all(){
 		$query = DB::connection()->prepare('SELECT * FROM hevoset');
 		$query->execute();
 		$rows = $query->fetchAll();
@@ -33,6 +33,7 @@ class horse extends BaseModel {
 				'ika' => $row['ika']
 			));	
 		}	
+		return $horses;
 	}
 
 	// Etsi

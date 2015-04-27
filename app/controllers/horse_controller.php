@@ -46,7 +46,7 @@
     public static function edit($id){
       self::check_logged_in();
       $horse = Horse::find($id);
-      View::make('horse/edit.html', array('attributes' => $horse));
+      View::make('horse/edit.html', array('horse' => $horse));
     }
 
     // Hevosen tietojen päivittäminen
@@ -70,16 +70,15 @@
       if(count($errors) > 0){
         View::make('horse/edit.html', array('errors' => $errors, 'attributes' => $attributes));
       }else{
-        $horse->update();
-
-      Redirect::to('/horse/' . $horse->id, array('message' => 'Hevosta on muokattu onnistuneesti!'));
+        $horse->update($id);
+        Redirect::to('/horse', array('message' => 'Hevosta on muokattu onnistuneesti!'));
     }
   }
 
   // Hevosen poistaminen
   public static function destroy($id){
     $horse = new Horse(array('id' => $id));
-    $horse->destroy();
+    $horse->destroy($id);
 
     Redirect::to('/horse', array('message' => 'Hevonen on poistettu onnistuneesti!'));
    }

@@ -146,5 +146,21 @@ class horse extends BaseModel {
   		return $errors;
 	}
 
+	// Update
+	public function update($id) {
+		$query = DB::connection()->prepate('UPDATE hevonen SET name = :name, sukupuoli = :sukupuoli, rotu = :rotu, isa = :isa, ema = :ema, varitys = :varitys, syntymaaika = :syntymaaika, ika = :ika');
+		$kysely->execute(array('id' => $id, 'name' => $this->name, 'sukupuoli' => $this->sukupuoli, 'rotu' => $this->rotu, 'isa' => $this->isa, 'ema' => $this->ema, 'varitys' => $this->varitys, 'syntymaaika' => $this->syntymaaika, 'ika' => $this->ika));
+
+		$row = $query->fetch();
+		$this->id = $row['id'];
+	}
+
+	// Delete
+	public function destroy($id) {
+		$query = DB::connection()->prepare('DELETE FROM hevonen WHERE id = :id RETURNING id');
+		$query->execute(array('id' => $id));
+		$row = $query->fetch();
+	}
+
 
 }

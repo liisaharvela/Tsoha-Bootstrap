@@ -13,8 +13,8 @@ Toteutan hevosrekisterin käyttäen pohjana esimerkkityöaihe [Kennelkerhoa](htt
 
 * [Etusivu](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/)
 * [Listaus](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses)
-* [Muokkaus](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses/1/edit)
-* [Tiedot](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horses/1)
+* [Muokkaus](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horse/1/edit)
+* [Tiedot](http://lihaliha.users.cs.helsinki.fi/mielikuvituselaimia/horse/1)
 
 ## Käynnistys- ja käyttöohje
 
